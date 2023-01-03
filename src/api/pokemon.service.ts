@@ -1,12 +1,18 @@
 import { Pokemon, PokemonClient } from 'pokenode-ts';
 import { Pokemon as PokemonType } from '../types/pokemon.types';
 
+const cacheOptions = {
+  maxAge: 5000,
+  exclude: { query: false },
+  clearOnStale: true,
+};
+
 export const getPokemonsAsync = async (
   offset = 0,
   limit = 10
 ): Promise<string[]> => {
   try {
-    const api = new PokemonClient();
+    const api = new PokemonClient({ cacheOptions: cacheOptions });
 
     const response = await api.listPokemons(offset, limit || 10);
     return response.results.map((result) => result.name);
