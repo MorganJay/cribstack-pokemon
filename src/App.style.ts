@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100vw;
+  flex-direction: column;
+  padding: 2rem;
   height: 100vh;
 `;
