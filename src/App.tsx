@@ -1,6 +1,6 @@
 import { Link, Routes, Route } from 'react-router-dom';
 
-import HomeView from 'views/home';
+import HomeView from './views/home';
 import PokemonView from 'views/pokemon';
 
 import { Container } from './App.style';
